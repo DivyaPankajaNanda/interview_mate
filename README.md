@@ -1,2 +1,3 @@
-# interviewMate
-AI interviewer
+# InterviewMate
+
+InterviewMate is an AI base interviewer.
