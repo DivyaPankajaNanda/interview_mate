@@ -1,2 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+import AvatarSelection from "../components/AvatarSelection.svelte"
+import Introduction from "../components/Introduction.svelte"
+import KeyInput from "../components/KeyInput.svelte"
+import * as CONSTANTS from "../util/constants"
+
+
+
+
+let avatar_selected : CONSTANTS.Avatar = CONSTANTS.Avatar.UNSELECTED
+
+</script>
+<KeyInput/>
+<AvatarSelection {avatar_selected}/>
+<Introduction/>

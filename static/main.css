@@ -1,0 +1,59 @@
+:root{
+    --color1:#ffffff;
+    --color2:#383838;
+    --color3:#4C4C6D;
+    --color4:#1B9C85;
+    --color5:#E8F6EF;
+    --color6:#FFE194;
+}
+
+*,*::after,*::before{
+    margin: 0rem;
+    padding: 0rem;
+    box-sizing: border-box;
+}
+
+html,body{
+    height:100vh;
+    width:100vw;
+    background: var(--color1);
+    color:var(--color2);
+    font-size: 16px;
+}
+
+button{
+    padding:0.4rem 1.2rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-weight: bold;
+}
+
+.btn-primary{
+    color:var(--color1);
+    background: var(--color4);
+    border: none;
+}
+
+/* Animations */
+@keyframes slideup{
+    0%{
+        top:0vh;
+    }
+    100%{
+        top:-100vh;
+    }
+}
+.slidePageUp{
+    animation: slideup 1s ease forwards;
+}
+@keyframes slideright{
+    0%{
+        left:0vw;
+    }
+    100%{
+        left:100vw;
+    }
+}
+.slidePageRight{
+    animation: slideright 1s ease forwards;
+}
