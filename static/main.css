@@ -43,7 +43,7 @@ button{
         top:-100vh;
     }
 }
-.slidePageUp{
+.SlideUp{
     animation: slideup 1s ease forwards;
 }
 @keyframes slideright{
@@ -54,6 +54,28 @@ button{
         left:100vw;
     }
 }
-.slidePageRight{
+.SlideRight{
     animation: slideright 1s ease forwards;
+}
+@keyframes slideleft{
+    0%{
+        left:0vw;
+    }
+    100%{
+        left:-100vw;
+    }
+}
+.SlideLeft{
+    animation: slideleft 1s ease forwards;
+}
+@keyframes slidedown{
+    0%{
+        top:0vh;
+    }
+    100%{
+        top:100vh;
+    }
+}
+.SlideDown{
+    animation: slidedown 1s ease forwards;
 }

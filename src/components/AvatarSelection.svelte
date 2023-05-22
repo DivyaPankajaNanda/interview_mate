@@ -2,21 +2,25 @@
     import * as CONSTANTS from "../util/constants"
 
     let slide_flag : boolean = false
-    const slidePageUp : Function = async () => {
-        slide_flag = true
-    }
-
+    let slide_animation : string = ""
     export let avatar_selected : CONSTANTS.Avatar = CONSTANTS.Avatar.UNSELECTED
     const selectAvatar : Function = async (avatar : CONSTANTS.Avatar) => {
         avatar_selected = avatar
     }
+
+    const slideAnimate : Function = async () => {
+        let response = await CONSTANTS.slide(CONSTANTS.SlideDirection.UP,slide_flag,slide_animation);
+        slide_flag = response.slide_flag
+        slide_animation  = response.slide_animation
+    }
 </script>
-<div class="d-flex flex-column justify-content-center align-items-center w-100 h-100 avatarBox {slide_flag?`slidePageUp`:``}">
-    <div class="d-flex justify-content-center align-items-center w-100" style="gap:7rem;">
+<div class="d-flex flex-column justify-content-center align-items-center w-100 h-100 avatarBox {slide_flag?`${slide_animation}`:``}">
+    <h3>Select your avatar.</h3>
+    <div class="d-flex justify-content-center align-items-center w-100 mt-4" style="gap:7rem;">
         <div class="avatar avatar_male {avatar_selected == CONSTANTS.Avatar.MALE ? `selected`:``}" on:click={()=>{selectAvatar(CONSTANTS.Avatar.MALE)}}><img src="/interviewe_male.svg" alt="Interviewe Male"></div>
         <div class="avatar avatar_female {avatar_selected == CONSTANTS.Avatar.FEMALE ? `selected`:``}" on:click={()=>{selectAvatar(CONSTANTS.Avatar.FEMALE)}}><img src="/interviewe_female.svg" alt="Interviewe Female"></div>
     </div>
-    <button class="btn-primary mt-4 {avatar_selected != CONSTANTS.Avatar.UNSELECTED?``:`opacity-0`}" on:click={()=>{slidePageUp()}}>Select</button>
+    <button class="btn-primary mt-4 {avatar_selected != CONSTANTS.Avatar.UNSELECTED?``:`opacity-0`}" on:click={()=>{slideAnimate()}}>Select</button>
 </div>
 <style>
 .avatarBox{
