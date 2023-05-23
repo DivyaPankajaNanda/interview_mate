@@ -1,4 +1,3 @@
-
 export enum Avatar{
     UNSELECTED,
     MALE,
@@ -10,6 +9,17 @@ export enum SlideDirection{
     RIGHT,
     UP,
     DOWN,
+}
+
+export enum User{
+    INTERVIEWER,
+    INTERVIEWEE,
+}
+
+export enum Chat{
+    QUESTION,
+    ANSWER,
+    EXPLANATION,
 }
 
 export const sleep : Function = (time_in_ms : number) => {

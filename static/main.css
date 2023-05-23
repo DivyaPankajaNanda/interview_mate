@@ -27,20 +27,44 @@ button{
     border-radius: 0.4rem;
     font-weight: bold;
 }
+button:focus{
+    outline:none;
+}
 
 .btn-primary{
     color:var(--color1);
     background: var(--color4);
     border: none;
 }
+.btn-secondary{
+    color:var(--color1);
+    background: var(--color3);
+    border: none;
+}
 
+.bold{
+    font-weight: bold;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+a,a:visited,a:active{
+    color:var(--color1);
+    text-decoration: none;
+}
 /* Animations */
 @keyframes slideup{
     0%{
-        top:0vh;
+        transform:translateY(0%);
     }
     100%{
-        top:-100vh;
+        transform:translateY(-100%);
     }
 }
 .SlideUp{
@@ -48,10 +72,10 @@ button{
 }
 @keyframes slideright{
     0%{
-        left:0vw;
+        transform:translateX(0%);
     }
     100%{
-        left:100vw;
+        transform:translateX(100%);
     }
 }
 .SlideRight{
@@ -59,23 +83,45 @@ button{
 }
 @keyframes slideleft{
     0%{
-        left:0vw;
+        transform:translateX(0%);
     }
     100%{
-        left:-100vw;
+        transform:translateX(-100%);
     }
 }
 .SlideLeft{
     animation: slideleft 1s ease forwards;
 }
+.SlideLeftReverse{
+    animation: slideleft 1s ease reverse forwards;
+}
 @keyframes slidedown{
     0%{
-        top:0vh;
+        transform:translateY(0%);
     }
     100%{
-        top:100vh;
+        transform:translateY(100%);
     }
 }
 .SlideDown{
     animation: slidedown 1s ease forwards;
+}
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color5);
+    border-radius: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color3);
+    width:0.5rem;
+    border-radius: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color3);
 }
