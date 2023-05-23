@@ -8,7 +8,7 @@ Give it any software engineering job description from any platform(exp: LinkedIn
 - conduct a chat based interview
 - give feedback on your answers
 
-If you like the product and find it useful, give this repo a :star<br>
+## If you like the product and find it useful, give this repo a :star: <br>
 
 ### Project local setup : 
 - clone the repository
